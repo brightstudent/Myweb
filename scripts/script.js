@@ -4,17 +4,23 @@
 /*eslint-env browser*/
 /*eslint 'no-console':0*/
 
-var deNav = document.querySelector("nav ul:first-of-type");
-var deButton = document.querySelector("nav div button");
+//var deNav = document.querySelector("nav ul:first-of-type");
+//var deButton = document.querySelector("nav div button");
+//
+//deButton.addEventListener("click", toggleMenu);
+//
+//function toggleMenu(event) {
+//    deNav.classList.toggle("toonMenu");
+//}
+//
+//console.log(deButton);
+//console.log(deNav);
 
-deButton.addEventListener("click", toggleMenu);
+let circle = document.getElementsBy('circle');
 
-function toggleMenu(event) {
-    deNav.classList.toggle("toonMenu");
+const onMouseMove = (e) => {
+    circle.style.left = e.pageX + 'px';
+    circle.style.top = e.pageY + 'px';
 }
 
-console.log(deButton);
-console.log(deNav);
-
-//alert("Hello dit is mijn page!");
-
+document.addEventListener('mousemove', onMouseMove);

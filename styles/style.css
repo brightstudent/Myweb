@@ -13,7 +13,6 @@ body {
     margin: auto;
 }
 
-
 main {
     margin-left: auto;
     margin-right: auto;
@@ -22,47 +21,19 @@ main {
     grid-auto-columns: repeat(2, 50%);
 }
 
-
-
-article {
+main article {
     position: relative;
     z-index: 0;
     overflow: hidden;
 }
 
-article:after {
+main article:after {
     content: '';
     display: block;
     padding-bottom: calc(100% / (5/9));
-
 }
 
-
-article p {
-    height: 100%;
-    width: 100%;
-    padding: 1em;
-
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
-    display: flex;
-    align-items: flex-end;
-
-    color: transparent;
-    background-image: transparent;
-    transition: .2s;
-}
-
-article:hover > p {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.4);
-    transition: .5s;
-    z-index: 999;
-}
-
-article div:first-child {
+main article div:first-child {
     overflow: hidden;
     position: absolute;
     width: 90%;
@@ -71,21 +42,73 @@ article div:first-child {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    z-index: 9099;
 }
 
-article div:first-child h1 {
+main article div:first-child h1 {
     color: white;
     text-transform: capitalize;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
     text-align: center;
-/*    font-size: 4.5vw;*/
+    /*    font-size: 4.5vw;*/
     padding: 5%;
     font-weight: 800;
     line-height: 100%;
 }
 
-article div:last-child {
+main article:hover div:first-child h1 {
+    color: white;
+}
+
+main article div:nth-child(2) {
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+/*
+    bottom: 0;
+    left: 0;
+*/
+
+    color: transparent;
+    background-color: transparent;
+    transition: .2s;
+}
+
+
+main article:hover div:nth-child(2) {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: .5s;
+    z-index: 999;
+}
+
+main article div:nth-child(2) > p {
+    position: absolute;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3% 0;
+    text-align: center;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transition: .2s;
+}
+
+main article:hover div:nth-child(2) p {
+    color: white;
+    transition: .5s;
+    z-index: 999;
+
+}
+
+
+
+main article div:last-child {
     /*    border: 3px solid #ff0000;*/
     position: absolute;
     width: 90%;
@@ -94,8 +117,7 @@ article div:last-child {
     left: 5%;
 }
 
-/*@/@/@/@/@ ---> KEYFRAMES ANIMATIONS <--- @\@\@\@\@*/
-
+/*@/@/@/@/@ ---> intro <--- @\@\@\@\@*/
 
 
 /*+++++++++++ PROJECT1 +++++++++++*/
@@ -147,7 +169,12 @@ article div:last-child {
     right: 0;
     top: 0%;
     z-index: -1;
+    transition: 1s;
+}
 
+.project2:hover div img:first-of-type {
+    transition: 1s;
+    top: 3%;
 }
 
 .project2 div img:nth-of-type(2) {
@@ -156,7 +183,14 @@ article div:last-child {
     left: 0;
     bottom: 5%;
     z-index: -2;
+    transition: 1s;
 }
+
+.project2:hover div img:nth-of-type(2) {
+    transition: 1s;
+    bottom: 8%;
+}
+
 
 /*+++++++++++ PROJECT3 +++++++++++*/
 
@@ -168,10 +202,17 @@ article div:last-child {
     width: 115%;
     position: absolute;
     left: 0;
-    TOP: 0%;
+    top: 0%;
     z-index: -1;
-
+    transition: 1s;
 }
+
+/*
+.project3:hover div img:first-of-type {
+    transition: 1s;
+    top: 5%;
+}
+*/
 
 .project3 div img:nth-of-type(2) {
     width: 100%;
@@ -179,7 +220,15 @@ article div:last-child {
     left: 5.5%;
     top: 52%;
     z-index: -2;
+    transition: 1s;
 }
+
+/*
+.project3:hover div img:nth-of-type(2) {
+    transition: 1s;
+    top: 45%;
+}
+*/
 
 /*+++++++++++ PROJECT4 +++++++++++*/
 
@@ -226,10 +275,6 @@ article div:last-child {
     background-color: #c70909;
 }
 
-.project5 div {
-    border: none;
-}
-
 .project5 div img {
     filter: drop-shadow(0px 0px 10px rgba(34, 4, 19, 0.3));
 }
@@ -237,9 +282,9 @@ article div:last-child {
 .project5 div img:first-of-type {
     width: 80%;
     position: absolute;
-    left: 2.5%;
+    left: 10%;
     top: 5%;
-    z-index: 0;
+    z-index: -2;
 }
 
 @keyframes multiple-screen-up {
@@ -256,9 +301,9 @@ article div:last-child {
 .project5 div img:nth-of-type(2) {
     width: 80%;
     position: absolute;
-    left: 2.5%;
+    left: 10%;
     bottom: 5%;
-    z-index: 0;
+    z-index: -;
 }
 
 .project5 div img:nth-of-type(3) {
@@ -266,7 +311,7 @@ article div:last-child {
     position: absolute;
     left: 0%;
     top: 22%;
-    z-index: 0;
+    z-index: -1;
     filter: drop-shadow(0px 0px 5px rgba(34, 4, 19, 0.53));
 }
 
@@ -274,6 +319,14 @@ article div:last-child {
 
 /*+++++++++++ PROJECT6 +++++++++++*/
 
+.project6 {
+    background-color: azure;
+}
+
+.project6 div:first-child h1 {
+    color: darkblue;
+    text-shadow: none;
+}
 
 /*-----------> MEDIA QUERIES <-----------*/
 
@@ -287,7 +340,7 @@ article div:last-child {
     main {
         grid-template-columns: 1fr;
     }
-    
+
     article div:first-child h1 {
         font-size: 10vw;
     }
@@ -299,8 +352,8 @@ article div:last-child {
     main {
         grid-template-columns: 1fr;
     }
-    
-        article div:first-child h1 {
+
+    article div:first-child h1 {
         font-size: 10vw;
     }
 }
@@ -309,8 +362,8 @@ article div:last-child {
     main {
         grid-template-columns: 1fr;
     }
-    
-        article div:first-child h1 {
+
+    article div:first-child h1 {
         font-size: 10vw;
     }
 }
@@ -319,7 +372,7 @@ article div:last-child {
     main {
         grid-template-columns: 1fr;
     }
-    
+
     article div:first-child h1 {
         font-size: 10vw;
     }
@@ -329,8 +382,8 @@ article div:last-child {
     main {
         grid-template-columns: repeat(2, 1fr);
     }
-    
-      article div:first-child h1 {
+
+    article div:first-child h1 {
         font-size: 5vw;
     }
 
@@ -341,7 +394,7 @@ article div:last-child {
     main {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     article div:first-child h1 {
         font-size: 5vw;
     }
@@ -351,6 +404,7 @@ article div:last-child {
     main {
         grid-template-columns: repeat(3, 1fr);
     }
+
     article div:first-child h1 {
         font-size: 3.5vw;
     }
@@ -360,6 +414,7 @@ article div:last-child {
     main {
         grid-template-columns: repeat(3, 1fr);
     }
+
     article div:first-child h1 {
         font-size: 3.5vw;
     }
@@ -369,6 +424,7 @@ article div:last-child {
     main {
         grid-template-columns: repeat(3, 1fr);
     }
+
     article div:first-child h1 {
         font-size: 3.5vw;
     }

@@ -5,7 +5,6 @@
   box-sizing: border-box;
   font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
   font-family: "Acumin-Pro", sans-serif;
-  @import: url("https://use.typekit.net/xta7btl.css");
 }
 body {
   width: 100%;
@@ -358,28 +357,24 @@ main {
 
 @media only screen and (min-width: 0px) {
   main {
-    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 }
 
 @media only screen and (min-width: 568px) {
   main {
-    -ms-grid-columns: (1fr) [2];
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media only screen and (min-width: 768px) {
   main {
-    -ms-grid-columns: (1fr) [2];
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media only screen and (min-width: 1440px) {
   main {
-    -ms-grid-columns: (1fr) [3];
     grid-template-columns: repeat(3, 1fr);
   }
   /* article div:first-child h1 {
@@ -389,14 +384,12 @@ main {
 
 @media only screen and (min-width: 1734px) {
   main {
-    -ms-grid-columns: (1fr) [3];
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media only screen and (min-width: 2593px) {
   main {
-    -ms-grid-columns: (1fr) [3];
     grid-template-columns: repeat(3, 1fr);
   }
   article div:first-child h1 {

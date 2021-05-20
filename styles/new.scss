@@ -1,0 +1,331 @@
+@mixin centreren {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
+  font-family: "Acumin-Pro", sans-serif;
+}
+
+body {
+  width: 100%;
+  margin: auto;
+  z-index: 0;
+
+  main {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: grid;
+    grid-auto-columns: repeat(2, 50%);
+    z-index: 1;
+  }
+}
+
+/* GENERAL STYLING: voor alle projecten is dit hetzelfde */
+
+.project {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (5 / 9));
+  }
+
+  > div {
+    position: absolute;
+  }
+
+  div:first-child {
+    @include centreren();
+    width: 90%;
+    height: 25%;
+    left: 5%;
+    z-index: 5;
+  }
+
+  div:first-child h1 {
+    color: white;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    /*    font-size: 4.5vw;*/
+    padding: 5%;
+    font-weight: 800;
+    line-height: 100%;
+  }
+
+  &:hover div:first-child h1 {
+    color: white;
+  }
+
+  div:nth-child(2) {
+    height: 100%;
+    width: 100%;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  &:hover div:nth-child(2) {
+    opacity: 1;
+    z-index: 4;
+  }
+
+  div:nth-child(2) > p {
+    position: absolute;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    padding: 3% 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  div:last-child {
+    width: 90%;
+    height: 75%;
+    bottom: 0;
+    left: 5%;
+    z-index: 3;
+  }
+
+  div:last-child img {
+    position: absolute;
+    will-change: transform;
+  }
+}
+
+/* INTRO: wie ben ik? */
+
+/* FIRST PROJECT: storytelling */
+
+.first {
+  background-color: gold;
+  div {
+    overflow-y: hidden;
+    filter: drop-shadow(0px 0px 10px rgba(147, 129, 34, 0.3));
+  }
+  div > img {
+    width: 100%;
+    top: 0;
+    animation: onepage-scroll-up ease-out 30s infinite alternate;
+  }
+}
+
+/* SECOND PROJECT: Amsterdam Student Guide */
+
+.second {
+  background-color: #ff2c2c;
+
+  div img {
+    transition: transform 1s;
+    filter: drop-shadow(4px 4px 15px rgba(26, 2, 2, 0.51));
+
+    &:first-of-type {
+      width: 60%;
+      right: 0;
+      top: 0;
+      z-index: 2;
+    }
+
+    &:nth-of-type(2) {
+      width: 55%;
+      left: 0;
+      bottom: 5%;
+      z-index: 1;
+    }
+  }
+
+  &:hover div img:first-of-type {
+    transform: translate3d(0, 3%, 0);
+  }
+
+  &:hover div img:nth-of-type(2) {
+    transform: translate3d(0, -3%, 0);
+  }
+}
+
+/* THIRD PROJECT: Search Better, Read Better! */
+
+.third {
+  background-color: #7309c7;
+
+  div img {
+    transition: transform 1s;
+
+    &:first-of-type {
+      width: 115%;
+      left: 0;
+      top: 0%;
+      z-index: 2;
+    }
+
+    &:first-of-type {
+      transform: translate3d(0, 6%, 0);
+    }
+
+    &:last-of-type {
+      width: 100%;
+      left: 5.5%;
+      top: 52%;
+      z-index: 1;
+    }
+  }
+
+  &:hover div img:last-of-type {
+    transform: translate3d(0, -6%, 0);
+  }
+}
+
+/* FOURTH PROJECT: Lowlands With A Twist */
+
+.fourth {
+  background-image: linear-gradient(#c9062b, #00008b);
+
+  div {
+    border: 3px solid black;
+    overflow-y: hidden;
+    filter: drop-shadow(0px 0px 10px rgba(34, 4, 19, 0.3));
+    border: none;
+
+    img {
+      width: 100%;
+      top: 0;
+      animation: onepage-scroll-up 30s ease-out infinite alternate-reverse;
+    }
+  }
+}
+
+@keyframes onepage-scroll-up {
+  0% {
+    transform: translate3d(0, -38%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 1%, 0);
+  }
+}
+
+/* FIFTH PROJECT: Make It Your Own */
+
+.fifth {
+  background-color: #c70909;
+
+  div img {
+    filter: drop-shadow(0px 0px 10px rgba(34, 4, 19, 0.3));
+
+    &:first-of-type {
+      width: 80%;
+      left: 10%;
+      top: 5%;
+      z-index: 1;
+    }
+
+    &:nth-of-type(2) {
+      width: 80%;
+      left: 10%;
+      bottom: 5%;
+      z-index: 1;
+    }
+
+    &:nth-of-type(3) {
+      width: 100%;
+      left: 0%;
+      top: 22%;
+      z-index: 2;
+      filter: drop-shadow(0px 0px 5px rgba(34, 4, 19, 0.53));
+    }
+  }
+}
+
+/* SIXTH PROJECT: first time on the web */
+
+.project6 {
+  background-color: azure;
+
+  div:first-child h1 {
+    color: darkblue;
+    text-shadow: none;
+  }
+}
+
+/* TEXT MEDIA QUERIES */
+/* TEXT MEDIA QUERIES */
+/* TEXT MEDIA QUERIES */
+/* TEXT MEDIA QUERIES */
+
+@media only screen and (min-width: 0px) and (max-width: 568px) {
+  .project div:first-child h1 {
+    font-size: 10vw;
+  }
+}
+
+@media only screen and (min-width: 568px) and (max-width: 1439px) {
+  .project div:first-child h1 {
+    font-size: 5vw;
+  }
+}
+
+@media only screen and (min-width: 1439px) and (max-width: 2592px) {
+  .project div:first-child h1 {
+    font-size: 4vw;
+  }
+}
+
+/* GRID MEDIA QUERIES */
+/* GRID MEDIA QUERIES */
+/* GRID MEDIA QUERIES */
+/* GRID MEDIA QUERIES */
+
+@media only screen and (min-width: 0px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (min-width: 568px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .project div:first-child h1 {
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (min-width: 1734px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 2593px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

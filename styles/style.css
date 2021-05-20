@@ -333,13 +333,14 @@ main {
 .six div img {
   -webkit-filter: drop-shadow(0px 0px 10px rgba(7, 10, 105, 0.2));
   filter: drop-shadow(0px 0px 10px rgba(7, 10, 105, 0.2));
-  --left: calc((100% - var(--width)) / 2);
+}
+
+.six div img:is(:nth-of-type(1), :nth-of-type(3)) {
+  width: 80%;
+  left: 10%;
 }
 
 .six div img:nth-of-type(1) {
-  --width: 80%;
-  width: var(--width);
-  left: var(--left);
   top: 5%;
   z-index: 0;
 }
@@ -351,9 +352,6 @@ main {
 }
 
 .six div img:nth-of-type(3) {
-  --width: 80%;
-  width: var(--width);
-  left: var(--left);
   bottom: 5%;
   z-index: 2;
 }
@@ -367,27 +365,6 @@ main {
 .seven div:first-child h1 {
   color: white;
 }
-
-.seven div img {
-  -webkit-filter: drop-shadow(0px 0px 10px rgba(7, 10, 105, 0.2));
-  filter: drop-shadow(0px 0px 10px rgba(7, 105, 89, 0.2));
-  --left: calc((100% - var(--width)) / 2);
-}
-
-.seven div img:nth-of-type(1) {
-  width: 100%;
-  top: 10%;
-  z-index: 0;
-}
-
-.seven div img:nth-of-type(2) {
-  --width: 80%;
-  width: var(--width);
-  left: var(--left);
-  bottom: 5%;
-  z-index: 1;
-}
-
 
 .bender {
   /*bender modi*/
@@ -638,7 +615,7 @@ main {
   display: none;
 }
 
-/* 8th PROJECT: UX - Beinvloedingstechnieken*/
+/* 8th PROJECT: Iformatie architectuur*/
 .eight {
   background-color: hotpink;
   background-image: linear-gradient(to top, pink, hotpink);
@@ -680,7 +657,6 @@ main {
 
 .project.eight div:last-child img:nth-of-type(even) {
   height: 60%;
-
 }
 .project.eight div:last-child img:nth-of-type(odd) {
   height: 50%;

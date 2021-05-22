@@ -55,7 +55,7 @@ main {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  z-index: 5;
+  z-index: 2;
 }
 
 .project > div:first-child h1 {
@@ -76,8 +76,10 @@ main {
 .project > div:nth-child(2) {
   height: 100%;
   width: 100%;
+  /* color: black; */
+  /* background-color: rgba(255, 255, 255, 0.952); */
   color: white;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.801);
   opacity: 0;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
@@ -90,22 +92,23 @@ main {
 
 .project > div:nth-child(2) > p {
   position: absolute;
-  width: 70%;
+  width: 90%;
   top: 50%;
   left: 50%;
   padding: 3% 0;
-  text-align: center;
   -webkit-transform: translate3d(-50%, -50%, 0);
   transform: translate3d(-50%, -50%, 0);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  line-height: 1.6em;
+  text-align: center;
+  text-justify: inter-word;
+}
+
+p > a {
+  text-decoration: none;
+  color: #00008b;
+  background-color: white;
+  padding: 3px 7px;
+  border-radius: 0.2em;
 }
 
 .project > div:last-child {
@@ -217,7 +220,13 @@ main {
 
 /* FOURTH PROJECT: Lowlands With A Twist */
 .four {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#c9062b), to(#00008b));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#c9062b),
+    to(#00008b)
+  );
   background-image: linear-gradient(#c9062b, #00008b);
 }
 
@@ -315,7 +324,13 @@ main {
 /* 6th PROJECT: first time on the web */
 .six {
   background-color: darkblue;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#4c88f8), to(darkblue));
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#4c88f8),
+    to(darkblue)
+  );
   background-image: linear-gradient(to top, #4c88f8, darkblue);
 }
 
@@ -325,7 +340,7 @@ main {
 
 .six div img {
   -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 71, 165, 0.205));
-          filter: drop-shadow(0px 0px 10px rgba(0, 71, 165, 0.205));
+  filter: drop-shadow(0px 0px 10px rgba(0, 71, 165, 0.205));
   height: auto;
 }
 
@@ -353,12 +368,22 @@ main {
 /* 7th PROJECT: Second time on the web - Bender */
 .seven {
   background-color: #ff1938;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#ff6363), to(#ff1938));
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#ff6363),
+    to(#ff1938)
+  );
   background-image: linear-gradient(to top, #ff6363, #ff1938);
 }
 
 .seven div:first-child h1 {
   color: white;
+}
+
+.seven div:nth-of-type(2) {
+  position: absolute;
 }
 
 .bender {
@@ -371,7 +396,7 @@ main {
 
 .bender {
   -webkit-transform: scale(var(--scale));
-          transform: scale(var(--scale));
+  transform: scale(var(--scale));
   border: 2px solid black;
   width: 300px;
   height: 580px;
@@ -405,7 +430,7 @@ main {
   left: calc(50% - 90px / 2);
   top: calc(50% - 125px - 205px / 2);
   -webkit-transform-origin: bottom;
-          transform-origin: bottom;
+  transform-origin: bottom;
 }
 
 .bender .antene {
@@ -461,7 +486,7 @@ main {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .bender .romp {
@@ -535,17 +560,17 @@ main {
 
 .bender .linker.arm {
   -webkit-transform: rotate(5deg);
-          transform: rotate(5deg);
+  transform: rotate(5deg);
   -webkit-transform-origin: 60% 10%;
-          transform-origin: 60% 10%;
+  transform-origin: 60% 10%;
   left: 0;
 }
 
 .bender .rechter.arm {
   -webkit-transform: rotate(-5deg);
-          transform: rotate(-5deg);
+  transform: rotate(-5deg);
   -webkit-transform-origin: 40% 10%;
-          transform-origin: 40% 10%;
+  transform-origin: 40% 10%;
   right: 0;
 }
 
@@ -587,7 +612,7 @@ main {
 .bender .rechter.voet {
   left: var(--offset);
   -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .bender.slapen .romp {
@@ -603,7 +628,7 @@ main {
 .bender.slapen .armen {
   top: 53%;
   -webkit-transform: scale(0.1);
-          transform: scale(0.1);
+  transform: scale(0.1);
   -webkit-transition: 0.6s;
   transition: 0.6s;
 }
@@ -631,7 +656,13 @@ main {
 /* 8th PROJECT: Iformatie architectuur*/
 .eight {
   background-color: hotpink;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(pink), to(hotpink));
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(pink),
+    to(hotpink)
+  );
   background-image: linear-gradient(to top, pink, hotpink);
 }
 
@@ -646,27 +677,27 @@ main {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 100%;
   left: 0;
 }
 
 .project.eight:hover div:last-child .pics {
   -webkit-animation-play-state: running;
-          animation-play-state: running;
+  animation-play-state: running;
 }
 
 .project.eight div:last-child .pics {
   -webkit-animation: moving-slides 100s linear infinite -22.6s;
-          animation: moving-slides 100s linear infinite -22.6s;
+  animation: moving-slides 100s linear infinite -22.6s;
   -webkit-animation-play-state: paused;
-          animation-play-state: paused;
+  animation-play-state: paused;
   height: 100%;
   width: auto;
   will-change: transform;
@@ -675,7 +706,7 @@ main {
 .project.eight div:last-child img {
   position: relative;
   -webkit-filter: drop-shadow(0px 0px 10px rgba(105, 7, 64, 0.2));
-          filter: drop-shadow(0px 0px 10px rgba(105, 7, 64, 0.2));
+  filter: drop-shadow(0px 0px 10px rgba(105, 7, 64, 0.2));
   width: auto;
   margin: 10px;
   z-index: 1;
@@ -692,30 +723,30 @@ main {
 @-webkit-keyframes moving-slides {
   0% {
     -webkit-transform: translate3d(0%, 0, 0);
-            transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
   }
   50% {
     -webkit-transform: translate3d(-91%, 0, 0);
-            transform: translate3d(-91%, 0, 0);
+    transform: translate3d(-91%, 0, 0);
   }
   100% {
     -webkit-transform: translate3d(0%, 0, 0);
-            transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
   }
 }
 
 @keyframes moving-slides {
   0% {
     -webkit-transform: translate3d(0%, 0, 0);
-            transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
   }
   50% {
     -webkit-transform: translate3d(-91%, 0, 0);
-            transform: translate3d(-91%, 0, 0);
+    transform: translate3d(-91%, 0, 0);
   }
   100% {
     -webkit-transform: translate3d(0%, 0, 0);
-            transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
   }
 }
 
@@ -744,7 +775,13 @@ main {
 .ten {
   /* background-color: rgb(255, 183, 243); */
   background-color: #7369ff;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#685dff), to(#ab93ff));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#685dff),
+    to(#ab93ff)
+  );
   background-image: linear-gradient(to bottom, #685dff, #ab93ff);
 }
 
@@ -767,6 +804,12 @@ main {
   /* text-shadow: none; */
 }
 
+.eleven div:last-child img {
+  width: 50%;
+  left: 25%;
+  bottom: 35%;
+}
+
 /* 12th PROJECT: Third time on the web - Webapplicaties */
 .twelve {
   background-color: #c6ffc6;
@@ -775,6 +818,12 @@ main {
 .twelve div:first-child h1 {
   color: white;
   /* text-shadow: none; */
+}
+
+.twelve div:last-child img {
+  width: 50%;
+  left: 25%;
+  bottom: 35%;
 }
 
 /* TEXT MEDIA QUERIES */
@@ -805,25 +854,25 @@ main {
 /* GRID MEDIA QUERIES */
 @media only screen and (min-width: 0px) {
   main {
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
 @media only screen and (min-width: 568px) {
   main {
-        grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media only screen and (min-width: 768px) {
   main {
-        grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media only screen and (min-width: 1440px) {
   main {
-        grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   .project div:first-child h1 {
     font-size: 3vw;
@@ -832,13 +881,13 @@ main {
 
 @media only screen and (min-width: 1734px) {
   main {
-        grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media only screen and (min-width: 2593px) {
   main {
-        grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 /*# sourceMappingURL=new.css.map */

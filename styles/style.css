@@ -4,6 +4,8 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Acumin-Pro", sans-serif;
+  scroll-margin-top: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -21,6 +23,7 @@ header {
   display: flex;
   flex-direction: column;
 }
+
 
 .contact {
   display: flex;
@@ -43,11 +46,11 @@ header {
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.171);
 }
 
-.tel {
+.contact .tel {
   min-width: 155px;
 }
 
-.mail {
+.contact .mail {
   min-width: 270px;
 }
 
@@ -99,26 +102,6 @@ header {
 
 .profile-content {
   width: min(100%, 500px);
-}
-
-.skills {
-  margin: 2em;
-  display: flex;
-}
-
-.rating {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  gap: 2px;
-}
-
-.rating > div {
-  --size: 10px;
-  width: var(--size);
-  height: var(--size);
-  border-radius: var(--size);
-  background-color: #685dff;
 }
 
 .work {
@@ -651,6 +634,55 @@ main {
   bottom: 2%;
 }
 
+.eleven {
+  position: relative;
+  visibility: visible;
+  background-color: #00008b;
+  overflow: hidden;
+  padding: 1em;
+}
+
+.eleven:after {
+  content: "";
+  display: block;
+  padding-bottom: calc(100% / (5 / 9));
+}
+
+.footer {
+  position: relative;
+  bottom: 0px;
+  flex: 1;
+  color: #3434c4;
+  font-weight: 800;
+  line-height: 100%;
+  font-size: clamp(1.8rem, 5vw, 10vw);
+}
+
+.contact2 {
+  position: absolute;
+  bottom: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.contact2 a {
+  width: 100%;
+  text-decoration: none;
+  font-family: "Acumin-Pro", sans-serif;
+  font-weight: 600;
+  color: white;
+}
+
+.contact2 p{
+  text-align: left;
+  background: rgb(255, 255, 255);
+  padding: .3em .5em;
+  border-radius: .2em;
+  color: #00008b;
+  line-height: 100%;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                               Responsive Grid                              */
 /* -------------------------------------------------------------------------- */
@@ -680,6 +712,10 @@ main {
   main {
     -ms-grid-columns: (1fr);
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .eleven {
+    display: none;
   }
 }
 

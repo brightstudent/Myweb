@@ -11,18 +11,3 @@ console.log("On");
 //     article.addEventListener('click', handleClick)
 // })
 
-var hoverzone = document.querySelector(".project.seven");
-var bender = document.querySelector(".bender");
-
-hoverzone.addEventListener("mouseover", gaatSlapen);
-hoverzone.addEventListener("mouseleave", wordtWakker);
-
-function gaatSlapen () {
-    bender.classList.add('slapen');
-    console.log("ZZZ")
-}
-
-function wordtWakker () {
-    bender.classList.remove('slapen');
-    console.log("ZZZ")
-}
